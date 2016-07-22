@@ -1,0 +1,24 @@
+--- settings.inc.php
++++ settings.inc.php
+@@ -44,8 +44,8 @@
+  * to connect to mysql socket use ':/path/to/mysql.sock';
+  */
+ $opt['db']['servername'] = 'localhost';
+-$opt['db']['username'] = '';
+-$opt['db']['password'] = '';
++$opt['db']['username'] = 'opencaching';
++$opt['db']['password'] = 'nix';
+ $opt['db']['pconnect'] = false;
+ 
+ /**
+@@ -239,8 +239,9 @@
+  * 13 Garmin (www.opencaching.com)
+  * 14 Opencaching Niederlande (www.opencaching.nl)
+  * 16 Opencaching Rumänien (www.opencaching.ro)
++ * 99 VGT
+  */
+-$opt['logic']['node']['id'] = 0;
++$opt['logic']['node']['id'] = 99;
+ 
+ /* settings for business layer
+  *

@@ -1,13 +1,13 @@
 FROM tutum/lamp:latest
+RUN apt-get update && \
+apt-get -y install wget
 ADD *.sh /
-RUN rm -fr /app && git clone https://github.com/ritchieGitHub/oc-server3.git /oc
+ADD *.patch /
+RUN rm -fr /app && git clone -b stable https://github.com/ritchieGitHub/oc-server3.git /oc
 RUN ln -s /oc/htdocs /app
+RUN ln -s /oc/sql/stored-proc /app/stored-proc
 RUN chmod u+x *.sh
-CMD ["create_oc.sh"]
-CMD ["initialize_oc.sh"]
-ADD settings-dist.inc.php /oc/htdocs/config2/settings.inc.php
-RUN cp /oc/htdocs/app/autoload.php /oc/htdocs/vendor/
-RUN php /oc/sql/stored-proc/maintain.php
+RUN /initialize_oc.sh
 
 EXPOSE 80 3306
 CMD ["/run.sh"]
