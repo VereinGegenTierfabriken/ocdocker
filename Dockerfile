@@ -1,6 +1,6 @@
 FROM tutum/lamp:latest
 RUN apt-get update && \
-apt-get -y install wget
+apt-get -y install wget nullmailer
 ADD *.sh /
 ADD *.patch /
 RUN rm -fr /app && git clone -b stable https://github.com/ritchieGitHub/oc-server3.git /oc
