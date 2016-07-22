@@ -2,11 +2,11 @@
 
 cd /oc/htdocs/lib/
 cp settings-dist.inc.php settings.inc.php
-patch -i /lib-settings-dist.inc.php.patch
+patch settings.inc.php -i /lib-settings-dist.inc.php.patch
 
 cd /oc/htdocs/config2/
 cp settings-dist.inc.php settings.inc.php
-patch -i /config2-settings-dist.inc.php.patch
+patch settings.inc.php -i /config2-settings-dist.inc.php.patch
 
 cd /oc/htdocs
 
@@ -15,5 +15,8 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d85314
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
+rm composer.lock
 php composer.phar install
+
+chown -R www-data.www-data /oc
 

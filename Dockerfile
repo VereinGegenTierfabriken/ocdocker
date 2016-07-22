@@ -1,4 +1,4 @@
-FROM tutum/lamp:latest
+FROM vgt/wheezy-lamp
 RUN apt-get update && \
 apt-get -y install wget nullmailer
 ADD *.sh /

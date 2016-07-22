@@ -1,24 +1,26 @@
---- settings.inc.php
-+++ settings.inc.php
-@@ -44,8 +44,8 @@
-  * to connect to mysql socket use ':/path/to/mysql.sock';
-  */
- $opt['db']['servername'] = 'localhost';
--$opt['db']['username'] = '';
--$opt['db']['password'] = '';
-+$opt['db']['username'] = 'opencaching';
-+$opt['db']['password'] = 'nix';
- $opt['db']['pconnect'] = false;
- 
- /**
-@@ -239,8 +239,9 @@
-  * 13 Garmin (www.opencaching.com)
-  * 14 Opencaching Niederlande (www.opencaching.nl)
-  * 16 Opencaching Rumänien (www.opencaching.ro)
-+ * 99 VGT
-  */
--$opt['logic']['node']['id'] = 0;
-+$opt['logic']['node']['id'] = 99;
- 
- /* settings for business layer
-  *
+47,48c47,48
+< $opt['db']['username'] = '';
+< $opt['db']['password'] = '';
+---
+> $opt['db']['username'] = 'opencaching';
+> $opt['db']['password'] = 'nix';
+57,58c57,58
+< $opt['db']['maintenance_user'] = '';
+< $opt['db']['maintenance_password'] = '';
+---
+> $opt['db']['maintenance_user'] = 'opencaching';
+> $opt['db']['maintenance_password'] = 'nix';
+111c111
+< $opt['db']['placeholder']['db'] = '';    // selected by default
+---
+> $opt['db']['placeholder']['db'] = 'opencaching';    // selected by default
+114c114
+< $opt['db']['placeholder']['tmpdb'] = '';
+---
+> $opt['db']['placeholder']['tmpdb'] = 'oc_tmpdb';
+241a242
+>  * 99 VGT
+243c244
+< $opt['logic']['node']['id'] = 0;
+---
+> $opt['logic']['node']['id'] = 99;

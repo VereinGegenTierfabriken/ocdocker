@@ -1,26 +1,18 @@
---- settings.inc.php
-+++ settings.inc.php
-@@ -34,7 +34,7 @@
- require_once $rootpath . 'config2/settings-dist-common.inc.php';
- 
- //id of the node; see list in config2/settings-dist.inc.php
--$oc_nodeid = 0;
-+$oc_nodeid = 99;
- $opt['logic']['node']['id'] = $oc_nodeid;
- 
- //name of the cookie
-@@ -109,10 +109,10 @@
- $news_approver_email = 'news-approver@<do.main>';
- 
- //local database settings
--$dbusername = 'username';
--$dbname = 'database';
--$dbserver = 'server';
--$dbpasswd = 'password';
-+$dbusername = 'opencaching';
-+$dbname = 'opencaching';
-+$dbserver = 'localhost';
-+$dbpasswd = 'nix';
- $dbpconnect = false;
- 
- $tmpdbname = 'temp'; // empty db with CREATE and DROP priviledges
+37c37
+< $oc_nodeid = 0;
+---
+> $oc_nodeid = 99;
+112,115c112,115
+< $dbusername = 'username';
+< $dbname = 'database';
+< $dbserver = 'server';
+< $dbpasswd = 'password';
+---
+> $dbusername = 'opencaching';
+> $dbname = 'opencaching';
+> $dbserver = 'localhost';
+> $dbpasswd = 'nix';
+118c118
+< $tmpdbname = 'temp'; // empty db with CREATE and DROP priviledges
+---
+> $tmpdbname = 'oc_tmpdb'; // empty db with CREATE and DROP priviledges
