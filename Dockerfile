@@ -1,6 +1,7 @@
 FROM vgt/wheezy-lamp
 RUN apt-get update && \
-apt-get -y install wget nullmailer
+apt-get -y install wget nullmailer net-tools
+# net-tools for netstat and ifconfig
 ADD *.sh /
 ADD *.patch /
 RUN rm -fr /app && git clone -b stable https://github.com/ritchieGitHub/oc-server3.git /oc

@@ -1,5 +1,11 @@
 using php-eclipse (based on eclipse-mars)
 
 apt-get -y install php5-xdebug
-echo "xdebug.remote_enable=on" >> /etc/php5/conf.d/20-xdebug.ini
-echo "xdebug.remote_autostart=off" >> /etc/php5/conf.d/20-xdebug.ini
+echo "xdebug.remote_enable=on" >> /etc/php5/mods-available/xdebug.ini
+echo "xdebug.remote_autostart=on" >> /etc/php5/mods-available/xdebug.ini
+
+
+get ip adress:
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' 512d7dc8af73850878fd3df29039d43583ecb40ef61e1f2a21c0b5d8e0ba161a
+
+ 
