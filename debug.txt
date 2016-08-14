@@ -1,0 +1,5 @@
+using php-eclipse (based on eclipse-mars)
+
+apt-get -y install php5-xdebug
+echo "xdebug.remote_enable=on" >> /etc/php5/conf.d/20-xdebug.ini
+echo "xdebug.remote_autostart=off" >> /etc/php5/conf.d/20-xdebug.ini
